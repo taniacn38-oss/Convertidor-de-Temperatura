@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff7f2;
+  color: #4a353b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.tarjeta-convertidor {
+  background-color: #ffffff;
+  border: 2px solid #ffd9c7;
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  max-width: 780px;
+  box-shadow: 0 10px 28px rgba(235, 148, 130, 0.14);
+}
+
+h1 {
+  font-size: 1.9rem;
+  color: #c95d63;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  color: #8c656d;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.etiqueta-oculta {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.fila-campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.campo {
+  flex: 1;
+  min-width: 140px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #f7c7be;
+  border-radius: 10px;
+  background-color: #fffaf7;
+  color: #4a353b;
+  font-size: 0.98rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #e88d72;
+  box-shadow: 0 0 0 3px rgba(232, 141, 114, 0.2);
+}
+
+.boton-convertir {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e88d72;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.boton-convertir:hover:not(:disabled) {
+  background-color: #d6745a;
+}
+
+.boton-convertir:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Estilo claro cuando el botón está deshabilitado */
+.boton-convertir:disabled {
+  background-color: #f7dfd9;
+  color: #b89896;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.resultado-conversion {
+  margin-top: 22px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #4c8c64;
+  min-height: 28px;
+}
+
+.resultado-conversion.aviso {
+  color: #c95d63;
+}
+
+/* Diseño responsivo para tablets y celulares */
+@media (max-width: 680px) {
+  .tarjeta-convertidor {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+
+  h1 {
+    font-size: 1.55rem;
+  }
+
+  .fila-campos {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .campo {
+    min-width: 100%;
+  }
+
+  .boton-convertir {
+    width: 100%;
+    padding: 13px;
+  }
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertidor de Temperatura</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="tarjeta-convertidor">
+      <h1>Convertidor de Temperatura</h1>
+      <p class="subtitulo">
+        Ingresa la temperatura, selecciona las unidades y convierte
+      </p>
+
+      <form id="formulario-temperatura" class="formulario-temperatura">
+        <div class="fila-campos">
+          <div class="campo">
+            <label for="valor-temperatura" class="etiqueta-oculta"
+              >Temperatura</label
+            >
+            <input
+              type="number"
+              id="valor-temperatura"
+              step="any"
+              placeholder="0.00"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="unidad-origen" class="etiqueta-oculta"
+              >Unidad de origen</label
+            >
+            <select id="unidad-origen" required>
+              <option value="" disabled selected>Desde unidad</option>
+              <option value="celsius">Celsius</option>
+              <option value="fahrenheit">Fahrenheit</option>
+              <option value="kelvin">Kelvin</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="unidad-destino" class="etiqueta-oculta"
+              >Unidad de destino</label
+            >
+            <select id="unidad-destino" required>
+              <option value="" disabled selected>A unidad</option>
+              <option value="celsius">Celsius</option>
+              <option value="fahrenheit">Fahrenheit</option>
+              <option value="kelvin">Kelvin</option>
+            </select>
+          </div>
+
+          <!-- Inicia deshabilitado hasta que los 3 campos estén llenos -->
+          <button
+            type="submit"
+            id="boton-convertir"
+            class="boton-convertir"
+            disabled
+          >
+            Convertir
+          </button>
+        </div>
+      </form>
+
+      <!-- Aquí se muestra el resultado debajo del formulario -->
+      <p
+        id="resultado-conversion"
+        class="resultado-conversion"
+        aria-live="polite"
+      ></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
